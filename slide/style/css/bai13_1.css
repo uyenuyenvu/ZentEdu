@@ -1,0 +1,63 @@
+*{
+	margin: 0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+#container{
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+	cursor: pointer;
+}
+#container:hover .btn{
+	display: block;
+}
+.btn:hover{
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.slide{
+	width: 100%;
+	display: none;
+}
+.active{
+	display: block;
+}
+.slide img{
+	width: 100%;
+}
+.btn{
+	position: absolute;
+	top: 35%;
+	font-size: 25px;
+	width: 40px;
+	height: 80px;
+	background-color: rgba(0, 0, 0, 0.1);
+	line-height: 80px;
+	color: white;
+	display: none;
+	text-align: center;
+}
+.btn_right{
+	right: 0;
+}
+#content_dot{
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+.dot{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #ccc;
+	margin-left: 6px;
+	cursor: pointer;
+}
+.dot_active{
+	background-color: red;
+}

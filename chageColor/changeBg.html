@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 100%;
+            display: flex;
+            background-color: pink;
+        }
+        .left{
+            width: 70%;
+            height: calc(100vh - 20px);
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+        }
+        .right{
+            width: 30%;
+        }
+        .top{
+            width: 100%;
+            border: 1px solid palevioletred;
+            height: calc(50vh - 10px);
+        }
+        .bottom{
+            width: 100%;
+            border: 1px solid palevioletred;
+            height: calc(50vh - 10px);
+        }
+        #text{
+            font-size: 150px;
+            font-weight: bold;
+            color: black;
+        }
+        .listColor{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .itemColor, .itemBg{
+            width: 100px;
+            height: 100px;
+            margin: 10px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left" id="bg">
+        <p id="text">Uyenvt</p>
+    </div>
+    <div class="right">
+        <div class="top">
+            <h1>Màu chữ</h1>
+            <div class="listColor">
+                <div class="itemColor" style="background-color: aqua" onclick="changeTextColor('aqua')">
+                </div>
+                <div class="itemColor" style="background-color: green" onclick="changeTextColor('green')">
+                </div>
+                <div class="itemColor" style="background-color: dodgerblue" onclick="changeTextColor('dodgerblue')">
+                </div>
+                <div class="itemColor" style="background-color: violet" onclick="changeTextColor('violet')">
+                </div>
+                <div class="itemColor" style="background-color: coral" onclick="changeTextColor('coral')">
+                </div>
+                <div class="itemColor" style="background-color: darkred" onclick="changeTextColor('darkred')">
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <h1>Màu nền</h1>
+            <div class="listColor">
+                <div class="itemBg" style="background-color: aqua" onclick="changeBgColor('aqua')">
+                </div>
+                <div class="itemBg" style="background-color: green" onclick="changeBgColor('green')">
+                </div>
+                <div class="itemBg" style="background-color: dodgerblue" onclick="changeBgColor('dodgerblue')">
+                </div>
+                <div class="itemBg" style="background-color: violet" onclick="changeBgColor('violet')">
+                </div>
+                <div class="itemBg" style="background-color: coral" onclick="changeBgColor('coral')">
+                </div>
+                <div class="itemBg" style="background-color: darkred" onclick="changeBgColor('darkred')">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function changeTextColor(color){
+      let text = document.getElementById('text')
+      text.style.color = color
+    }
+    function changeBgColor(color){
+        let bg = document.getElementById('bg')
+      bg.style.backgroundColor = color
+
+    }
+</script>
+</body>
+</html>

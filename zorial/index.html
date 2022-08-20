@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="container header">
+        <div class="headerLeft">
+            <img src="asset/logo-dark.png" alt="" class="logo">
+            <div class="itemMenu">Home</div>
+            <div class="itemMenu">Home</div>
+            <div class="itemMenu">Home</div>
+            <div class="itemMenu">Home</div>
+            <div class="itemMenu">Home</div>
+            <div class="itemMenu">Home</div>
+        </div>
+        <div class="headerRight">
+            <button class="btnDownload">DOWNLOAD</button>
+        </div>
+    </div>
+    <div class="container banner">
+        <img src="asset/hero-1-img.png" alt="">
+        <div class="contactForm">
+            <p class="description">Lorem ipsum dolor sit.</p>
+            <p class="title">Lorem ipsum dolor dolor sit.</p>
+            <input type="text" placeholder="Enter your name" id="name" class="inputContact">
+            <p id="errName" class="err"></p>
+            <input type="text" placeholder="Enter your email" id="email"  class="inputContact">
+            <p id="errEmail" class="err"></p>
+            <textarea id="message" placeholder="Enter your message"  class="inputContact"></textarea>
+            <p id="errMessage" class="err"></p>
+            <div class="checkboxWrap">
+                <input type="checkbox" id="agree"> Lorem ipsum dolor sit amet.
+            </div>
+            <p id="errAgree" class="err"></p>
+            <button class="btnConfirm">SEND INFORMATION</button>
+        </div>
+    </div>
+    <div class="provider">
+        <div class="title">Best we provider</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolore, ducimus eos molestias mollitia necessitatibus.</p>
+    </div>
+    <div class="container cards">
+        <div class="card">
+            <img src="asset/icon-1.png" alt="">
+        </div>
+    </div>
+    <div class="modal">
+        <div class="modalContent">
+            <div class="title">Chúc mừng bạn đã gửi thông tin thành công</div>
+            <div class="content">
+                <p>Thông tin bạn đã gửi: </p>
+                <p id="resultName"></p>
+                <p id="resultEmail"></p>
+                <p id="resultMessage"></p>
+            </div>
+            <div class="footer">
+                <button id="btnCloseModal">Close</button>
+            </div>
+        </div>
+    </div>
+    <script>
+      $(document).ready(function(){
+        //khi click button submit
+        $('.btnConfirm').on('click', function (){
+            let flag = true
+            let name = $('#name').val()
+            let email = $('#email').val()
+            let message = $('#message').val()
+            let agree = $('#agree').prop('checked')
+          if (name.length === 0){
+            flag = false
+            $('#errName').text('Please enter your name!')
+          }else{
+            $('#errName').text('')
+          }
+          if (email.length === 0){
+            flag = false
+            $('#errEmail').text('Please enter your email!')
+          }else{
+            $('#errEmail').text('')
+          }
+          if (message.length === 0){
+            flag = false
+            $('#errMessage').text('Please enter message!')
+          }else {
+            $('#errMessage').text('')
+          }
+          if (!agree){
+            flag = false
+            $('#errAgree').text('Please choose agree!')
+          }else{
+            $('#errAgree').text('')
+          }
+
+          if(flag){
+            $('#resultName').text('Tên: '+name)
+            $('#resultEmail').text('Tên: '+email)
+            $('#resultMessage').text('Tên: '+message)
+            $('.modal').show()
+          }
+        })
+        //khi nhập vào ô input
+        $('.inputContact').on('keyup', function (){
+          $(this).next().text('')
+        })
+        //khi check vào ô đồng ý điều khoản
+        $('#agree').on('change', function (){
+          $('#errAgree').text('')
+        })
+        //khi ấn nút close của modal
+        $('#btnCloseModal').on('click', function (){
+          $('.modal').hide()
+        })
+      })
+    </script>
+</body>
+</html>

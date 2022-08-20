@@ -1,0 +1,145 @@
+.container{
+    width: calc(100% - 400px);
+    padding: 0 200px;
+
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    line-height: 30px;
+}
+.headerLeft{
+    height: 30px;
+    display: flex;
+}
+.headerLeft>.logo{
+    height: 30px;
+}
+.itemMenu{
+    line-height: 30px;
+    font-size: 20px;
+    margin-left: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.itemMenu:hover{
+    color: dodgerblue;
+}
+.btnDownload{
+    background-color: white;
+    border: 1px solid dodgerblue;
+    padding: 5px 15px;
+    font-weight: bold;
+    color: dodgerblue;
+}
+.banner{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    margin-bottom: 70px;
+    align-items: center;
+}
+.banner>img{
+    width: 50%;
+}
+.contactForm{
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    border-top: 5px solid dodgerblue;
+    max-width: 290px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.description{
+    color: grey;
+    font-size: 20px;
+}
+.title{
+    font-size: 25px;
+}
+.contactForm>p{
+    margin-top: 0;
+}
+.contactForm>input{
+    border: 1px solid darkgray;
+    border-radius: 3px;
+    height: 40px;
+    padding: 0 10px;
+    width: 265px;
+}
+
+.contactForm>textarea{
+    width: 265px;
+    border: 1px solid darkgray;
+    border-radius: 3px;
+    padding: 10px 10px 0 10px;
+    color: darkgray;
+    height: 100px;
+}
+.btnConfirm{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.checkboxWrap>input{
+    height: 20px;
+    border-radius: 0;
+    width: 20px;
+    margin: 0 20px 0 0;
+}
+.checkboxWrap{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.provider{
+    width: 35%;
+    margin: 0 auto;
+    text-align: center;
+}
+.provider>.title{
+    font-weight: bold;
+    font-size: 25px;
+}
+.provider>p{
+    color: grey;
+}
+.err{
+    color: red;
+    font-style: italic;
+    text-align: left;
+}
+.modal{
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #00000075;
+}
+.modalContent{
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 40vw;
+}
+.modalContent .title{
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.footer{
+    text-align: right;
+    margin-top: 10px;
+}

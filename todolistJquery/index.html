@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>todo list</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .container{
+            padding: 50px 200px;
+        }
+        .inputWrap{
+            display: flex;
+        }
+        input{
+            width: 80%;
+            height: 50px;
+            padding: 0 20px;
+            font-size: 15px;
+        }
+        button{
+            width: 20%;
+        }
+        .itemTask{
+            padding: 10px 20px;
+            font-size: 15px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+        }
+        .close{
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px 10px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .done{
+            display: none;
+            margin-right: 10px;
+        }
+        .checkDone>.done{
+            display: block;
+        }
+        .checkDone>.text{
+            text-decoration-line: line-through;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="inputWrap">
+        <input type="text" id="key">
+        <button id="btnAdd">Add</button>
+    </div>
+    <div id="listTask">
+    </div>
+</div>
+<script>
+  $(document).ready(function(){
+    //sự kiện click vào nút add
+    $('#btnAdd').on('click', function (){
+      let text = $('#key').val()
+      if (text.length > 0){
+        $('#listTask').append('<div class="itemTask">\n' +
+          '            <pre class="done">V</pre>\n' +
+          '            <pre class="text">'+text+'</pre>\n' +
+          '            <pre class="close">X</pre>\n' +
+          '        </div>')
+        $('#key').val('')
+      }
+    })
+    //sự kiện click vào nút close
+    $('#listTask').on('click', '.close', function (){
+      $(this).parent().remove()
+    })
+
+    //sự kiện click vào một dòng
+    $('#listTask').on('click', '.itemTask', function (){
+      $(this).addClass('checkDone')
+    })
+
+  });
+</script>
+</body>
+</html>
